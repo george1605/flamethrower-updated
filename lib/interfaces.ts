@@ -20,7 +20,8 @@ export interface RouteChangeData {
   scrollId?: string;
 }
 
-export type FlameWindow = Window & typeof globalThis & { flamethrower: Router };
+export type FlameElement = HTMLElement & { states: Map<string, object>, saveTo: object };
+export type FlameWindow = Window & typeof globalThis & { flamethrower: Router, element: FlameElement };
 
 export type FetchProgressEvent = {
   /** Percentage of bytes that have been sent as a percentage e.g. 100% -> 100, 50% -> 50 */
